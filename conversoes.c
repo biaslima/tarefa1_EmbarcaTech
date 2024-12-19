@@ -13,6 +13,18 @@ float quilograma_para_tonelada(float quilograma){return quilograma / 1000;}
 float tonelada_para_quilograma(float tonelada){return tonelada * 1000;}
 float grama_para_quilograma(float grama){return grama / 1000;}
 
+// Funções de Área
+float metrosquadrados_centimetrosquadrados (float metros) {return metros * 10000;}
+float centimetrosquadrados_metrosquadrados (float centimetros) {return centimetros / 10000;}
+
+// Funções de Tempo
+float segundos_horas (float segundos) {return segundos / 3600;}
+float segundos_minutos (float segundos) {return segundos / 60;}
+float horas_segundos (float horas) {return horas * 3600;}
+float horas_minutos (float horas) {return horas * 60;}
+float minutos_segundos (float minutos) {return minutos * 60;}
+float minutos_horas (float minutos) {return minutos / 60;}
+
 //Função Principal
 void main(){
     int opcao = 0, conversao = 0;
@@ -121,8 +133,39 @@ void main(){
                     default:
                         printf("Opcao invalida! Tente novamente.\n");
                         break;
-                    }   
-                }
+                    }
+            case 6: 
+                while (1){
+                    printf("Escolha uma conversao:\n");
+                    printf("1. Metros Quadrados para Centimetros Quadrados\n");
+                    printf("2. Centimetros Quadrados para Metros Quadrados\n");
+                    printf("Opçao: ");
+                    scanf("%d", &conversao);
+
+                    if (conversao == 0) {
+                        printf ("Voltando ao menu de conversoes...\n");
+                        break;
+                    }
+
+                    printf("Digite o valor: ");
+                    scanf("%f", &valor);
+
+                    switch (conversao){
+                    case 1:
+                            resultado = metrosquadrados_centimetrosquadrados(valor);
+                            printf("%.2f metros quadrados = %.2f centimetros quadrados\n", valor, resultado);
+                        break;
+                    case 2: 
+                        resultado = centimetrosquadrados_metrosquadrados(valor);
+                            printf("%.2f centimetros quadrados = %.2f metros quadrados\n", valor, resultado);
+                        break;
+                    default:
+                        printf("Opcao invalida! Tente novamente.\n");
+                        break;
+
+                    }
+                }   
+            }
             default:
                 break;
         }
