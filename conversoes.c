@@ -26,7 +26,7 @@ float minutos_segundos (float minutos) {return minutos * 60;}
 float minutos_horas (float minutos) {return minutos / 60;}
 
 //Função Principal
-void main(){
+int main(){
     int opcao = 0, conversao = 0;
     float valor = 0, resultado = 0;
 
@@ -38,8 +38,9 @@ void main(){
         printf("3. Unidades de Volume\n");
         printf("4. Unidades de Temperatura\n");
         printf("5. Unidades de Velocidade\n");
-        printf("6. Unidades de Area\n");
-        printf("7. Unidades de Tempo\n");
+        printf("6. Unidades de Potencia\n");
+        printf("7. Unidades de Area\n");
+        printf("8. Unidades de Tempo\n");
         printf("0. Sair\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
@@ -92,9 +93,8 @@ void main(){
                         break;
                     }   
                 }
-                
-                break;
-            case 2: 
+             break;
+            case 2:
                 
                 while(1){
                     printf("Escolha uma conversao:\n");
@@ -135,7 +135,7 @@ void main(){
                         printf("Opcao invalida! Tente novamente.\n");
                         break;
                     }
-            case 6: 
+            case 7: 
                 while (1){
                     printf("Escolha uma conversao:\n");
                     printf("1. Metros Quadrados para Centimetros Quadrados\n");
@@ -166,7 +166,8 @@ void main(){
 
                     }
                 }
-            case 7:
+
+            case 8:
                 while (1){
                     printf("Escolha uma conversao:\n");
                     printf("1. Segundos para Horas\n");
@@ -219,6 +220,62 @@ void main(){
             }
             default:
                 break;
+
+             break; //Do case 2
+            case 5: while(1){
+                     printf("Escolha uma conversao:\n");
+                     printf("1. km/h para m/s\n");
+                     printf("2. m/s para km/h\n");
+                     printf("3. km/h para mph\n");
+                     printf("4. mph para km/h\n");
+                     printf("5. m/s para mph\n");
+                     printf("6. mph para m/s\n");
+                     printf("0. Voltar ao Menu de Conversoes\n");
+                     printf("Opcao: ");
+                     while(scanf("%d", &conversao),conversao<0 || conversao>6)
+                         printf("Opcao invalida! Tente novamente.\nOpcao: ");
+                     if(conversao==0){puts("Voltando ao menu de conversoes..."); break;}
+                     printf("Digite o valor: ");
+                     scanf("%f",&valor);
+
+                     switch(conversao){
+                         case 1: resultado=valor/3.6; printf("%.2f km/h = %.2f m/s\n", valor, resultado); break;
+                         case 2: resultado=valor*3.6; printf("%.2f m/s = %.2f km/h\n", valor, resultado); break;
+                         case 3: resultado=valor*0.621371; printf("%.2f km/h = %.2f mph\n", valor, resultado); break;
+                         case 4: resultado=valor/0.621371; printf("%.2f mph = %.2f km/h\n", valor, resultado); break;
+                         case 5: resultado=valor*2.23694; printf("%.2f m/s = %.2f mph\n", valor, resultado); break;
+                         default: resultado=valor/2.23694; printf("%.2f mph = %.2f m/s\n", valor, resultado);
+                        }
+                    }
+             break;//Do case 5
+            case 6: while(1){
+                     printf("Escolha uma conversao:\n");
+                     printf("1. W para kW\n");
+                     printf("2. kW para W\n");
+                     printf("3. W para cv\n");
+                     printf("4. cv para W\n");
+                     printf("5. kW para cv\n");
+                     printf("6. cv para kW\n");
+                     printf("0. Voltar ao Menu de Conversoes\n");
+                     printf("Opcao: ");
+                     while(scanf("%d", &conversao),conversao<0 || conversao>6)
+                         printf("Opcao invalida! Tente novamente.\nOpcao: ");
+                     if(conversao==0){puts("Voltando ao menu de conversoes..."); break;}
+                     printf("Digite o valor: ");
+                     scanf("%f",&valor);
+
+                     switch(conversao){
+                         case 1: resultado=valor/1000; printf("%.2f W = %.2f kW\n", valor, resultado); break;
+                         case 2: resultado=valor*1000; printf("%.2f kW = %.2f W\n", valor, resultado); break;
+                         case 3: resultado=valor*0.0013596; printf("%.2f W = %.2f cv\n", valor, resultado); break;
+                         case 4: resultado=valor/0.0013596; printf("%.2f cv = %.2f W\n", valor, resultado); break;
+                         case 5: resultado=valor*1.35962; printf("%.2f kW = %.2f cv\n", valor, resultado); break;
+                         default: resultado=valor/1.35962; printf("%.2f cv = %.2f kW\n", valor, resultado);
+                        }
+                    }
+             break;//Do case 6
+            default: puts("\nErro, selecionou algo invalido\n");
         }
     }
+ return 0;
 }
