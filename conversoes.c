@@ -41,6 +41,11 @@ double fahrenheitParaKelvin(double valor) { return (valor - 32.0) * 5.0 / 9.0 + 
 double kelvinParaCelsius(double valor) { return valor - 273.15; }
 double kelvinParaFahrenheit(double valor) { return (valor - 273.15) * 9.0 / 5.0 + 32.0; }
 
+// Funções de conversão para unidades de bits, bytes, KB, MB e GB
+float bitsParaBytes(float bits) { return bits / 8.0; }
+float bytesParaKB(float bytes) { return bytes / 1024.0; }
+float kbParaMB(float kb) { return kb / 1024.0; }
+float mbParaGB(float mb) { return mb / 1024.0; }
 
 //Função Principal
 int main(){
@@ -58,6 +63,7 @@ int main(){
         printf("6. Unidades de Potencia\n");
         printf("7. Unidades de Area\n");
         printf("8. Unidades de Tempo\n");
+        printf("9. Unidades de armazenamento de dados\n");
         printf("0. Sair\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
@@ -417,7 +423,53 @@ int main(){
                         }
                     }
              break;//Do case 6
-            default: puts("\nErro, selecionou algo invalido\n");
+            
+            case 9: while (1) { 
+                printf("\n=== Conversor de Unidades ===\n");
+                printf("1 - Bits para Bytes\n");
+                printf("2 - Bytes para KB\n");
+                printf("3 - KB para MB\n");
+                printf("4 - MB para GB\n");
+                printf("0 - Sair\n");
+                printf("=============================\n");
+                printf("Opcao: ");
+                
+                if (scanf("%d", &opcao) != 1) {
+                    printf("Entrada invalida. Tente novamente.\n");
+                    while(getchar() != '\n'); 
+                    continue;
+                }
+            
+                if (opcao == 0) {
+                    printf("Saindo do menu de conversão...\n");
+                    break; 
+                }
+            
+                printf("Digite o valor para conversao: ");
+                if (scanf("%f", &valor) != 1) {
+                    printf("Entrada invalida. Tente novamente.\n");
+                    while(getchar() != '\n'); 
+                    continue;
+                }
+            
+                switch (opcao) {
+                    case 1:
+                        printf("%.2f bits = %.2f bytes\n", valor, bitsParaBytes(valor));
+                        break;
+                    case 2:
+                        printf("%.2f bytes = %.2f KB\n", valor, bytesParaKB(valor));
+                        break;
+                    case 3:
+                        printf("%.2f KB = %.2f MB\n", valor, kbParaMB(valor));
+                        break;
+                    case 4:
+                        printf("%.2f MB = %.2f GB\n", valor, mbParaGB(valor));
+                        break;
+                    default:
+                        printf("Opcao invalida! Tente novamente.\n");
+                        break;
+                }
+            }
         }
     }
  return 0;
