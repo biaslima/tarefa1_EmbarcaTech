@@ -25,6 +25,15 @@ float horas_minutos (float horas) {return horas * 60;}
 float minutos_segundos (float minutos) {return minutos * 60;}
 float minutos_horas (float minutos) {return minutos / 60;}
 
+// Definições das funções de conversão volumétrica
+double litroParaMililitro(double valor){return valor * 1000.0;}
+double litroParaMetrosCubicos(double valor){return valor / 1000.0;}
+double mililitroParaLitro(double valor){return valor / 1000.0;}
+double mililitroParaMetrosCubicos(double valor){return valor / 1e6;}
+double metrosCubicosParaLitro(double valor){return valor * 1000.0;}
+double metrosCubicosParaMililitro(double valor){return valor * 1e6;}
+
+
 //Função Principal
 int main(){
     int opcao = 0, conversao = 0;
@@ -135,6 +144,70 @@ int main(){
                         printf("Opcao invalida! Tente novamente.\n");
                         break;
                     }
+
+            case 3:
+                while (1) {
+                    // Exibir o menu para o usuário
+                    printf("Qual conversao volumetrica voce quer fazer?\n");
+                    printf("1 - Litro para Mililitro\n");
+                    printf("2 - Litro para Metros Cubicos\n");
+                    printf("3 - Mililitro para Litro\n");
+                    printf("4 - Mililitro para Metros Cubicos\n");
+                    printf("5 - Metros Cubicos para Litro\n");
+                    printf("6 - Metros Cubicos para Mililitro\n");
+                    printf("0 - Sair do menu\n");
+                    printf("Escolha uma opcao: ");
+                    scanf("%d", &opcao);
+
+                    if (opcao == 0) {
+                        printf("Voltando ao menu de conversoes...\n");
+                        break; // Sai do laço while
+                    }
+
+                    double valor, resultado;
+                    switch (opcao) {
+                        case 1:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = litroParaMililitro(valor);
+                            printf("Resultado: %.2lf mL\n", resultado);
+                            break;
+                        case 2:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = litroParaMetrosCubicos(valor);
+                            printf("Resultado: %.6lf m³\n", resultado);
+                            break;
+                        case 3:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = mililitroParaLitro(valor);
+                            printf("Resultado: %.2lf L\n", resultado);
+                            break;
+                        case 4:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = mililitroParaMetrosCubicos(valor);
+                            printf("Resultado: %.6lf m³\n", resultado);
+                            break;
+                        case 5:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = metrosCubicosParaLitro(valor);
+                            printf("Resultado: %.2lf L\n", resultado);
+                            break;
+                        case 6:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = metrosCubicosParaMililitro(valor);
+                            printf("Resultado: %.2lf mL\n", resultado);
+                            break;
+                        default:
+                            printf("Opcao invalida! Tente novamente.\n");
+                            break;
+                }
+            }
+
             case 7: 
                 while (1){
                     printf("Escolha uma conversao:\n");
