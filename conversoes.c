@@ -26,20 +26,20 @@ float minutos_segundos (float minutos) {return minutos * 60;}
 float minutos_horas (float minutos) {return minutos / 60;}
 
 // Definições das funções de conversão volumétrica
-double litroParaMililitro(double valor){return valor * 1000.0;}
-double litroParaMetrosCubicos(double valor){return valor / 1000.0;}
-double mililitroParaLitro(double valor){return valor / 1000.0;}
-double mililitroParaMetrosCubicos(double valor){return valor / 1e6;}
-double metrosCubicosParaLitro(double valor){return valor * 1000.0;}
-double metrosCubicosParaMililitro(double valor){return valor * 1e6;}
+float litroParaMililitro(float valor){return valor * 1000.0;}
+float litroParaMetrosCubicos(float valor){return valor / 1000.0;}
+float mililitroParaLitro(float valor){return valor / 1000.0;}
+float mililitroParaMetrosCubicos(float valor){return valor / 1e6;}
+float metrosCubicosParaLitro(float valor){return valor * 1000.0;}
+float metrosCubicosParaMililitro(float valor){return valor * 1e6;}
 
 // Funções de conversão de temperatura
-double celsiusParaFahrenheit(double valor) { return (valor * 9.0 / 5.0) + 32.0; }
-double celsiusParaKelvin(double valor) { return valor + 273.15; }
-double fahrenheitParaCelsius(double valor) { return (valor - 32.0) * 5.0 / 9.0; }
-double fahrenheitParaKelvin(double valor) { return (valor - 32.0) * 5.0 / 9.0 + 273.15; }
-double kelvinParaCelsius(double valor) { return valor - 273.15; }
-double kelvinParaFahrenheit(double valor) { return (valor - 273.15) * 9.0 / 5.0 + 32.0; }
+float celsiusParaFahrenheit(float valor) { return (valor * 9.0 / 5.0) + 32.0; }
+float celsiusParaKelvin(float valor) { return valor + 273.15; }
+float fahrenheitParaCelsius(float valor) { return (valor - 32.0) * 5.0 / 9.0; }
+float fahrenheitParaKelvin(float valor) { return (valor - 32.0) * 5.0 / 9.0 + 273.15; }
+float kelvinParaCelsius(float valor) { return valor - 273.15; }
+float kelvinParaFahrenheit(float valor) { return (valor - 273.15) * 9.0 / 5.0 + 32.0; }
 
 // Funções de conversão para unidades de bits, bytes, KB, MB e GB
 float bitsParaBytes(float bits) { return bits / 8.0; }
@@ -51,6 +51,7 @@ float mbParaGB(float mb) { return mb / 1024.0; }
 int main(){
     int opcao = 0, conversao = 0;
     float valor = 0, resultado = 0;
+    
 
     while (1){ // Menu de Tipos de Converções -- Foi criado um menu switch case para o usuário escolher a unidade de conversão. Esse while (assim como os próximo) permite que o menu fique em loop até que o usuário queira sair. 
     
@@ -178,43 +179,43 @@ int main(){
                         break; // Sai do laço while
                     }
 
-                    double valor, resultado;
+               
                     switch (opcao) {
                         case 1:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = litroParaMililitro(valor);
-                            printf("Resultado: %.2lf mL\n", resultado);
+                            printf("Resultado: %.2f mL\n", resultado);
                             break;
                         case 2:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = litroParaMetrosCubicos(valor);
-                            printf("Resultado: %.6lf m³\n", resultado);
+                            printf("Resultado: %.6f m³\n", resultado);
                             break;
                         case 3:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = mililitroParaLitro(valor);
-                            printf("Resultado: %.2lf L\n", resultado);
+                            printf("Resultado: %.2f L\n", resultado);
                             break;
                         case 4:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = mililitroParaMetrosCubicos(valor);
-                            printf("Resultado: %.6lf m³\n", resultado);
+                            printf("Resultado: %.6f m³\n", resultado);
                             break;
                         case 5:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = metrosCubicosParaLitro(valor);
-                            printf("Resultado: %.2lf L\n", resultado);
+                            printf("Resultado: %.2f L\n", resultado);
                             break;
                         case 6:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = metrosCubicosParaMililitro(valor);
-                            printf("Resultado: %.2lf mL\n", resultado);
+                            printf("Resultado: %.2f mL\n", resultado);
                             break;
                         default:
                             printf("Opcao invalida! Tente novamente.\n");
@@ -241,43 +242,42 @@ int main(){
                         break; // Sai do laço while
                     }
 
-                    double valor, resultado;
                     switch (opcao) {
                         case 1:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = celsiusParaFahrenheit(valor);
-                            printf("Resultado: %.2lf °F\n", resultado);
+                            printf("Resultado: %.2f °F\n", resultado);
                             break;
                         case 2:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = celsiusParaKelvin(valor);
-                            printf("Resultado: %.2lf K\n", resultado);
+                            printf("Resultado: %.2f K\n", resultado);
                             break;
                         case 3:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = fahrenheitParaCelsius(valor);
-                            printf("Resultado: %.2lf °C\n", resultado);
+                            printf("Resultado: %.2f °C\n", resultado);
                             break;
                         case 4:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = fahrenheitParaKelvin(valor);
-                            printf("Resultado: %.2lf K\n", resultado);
+                            printf("Resultado: %.2f K\n", resultado);
                             break;
                         case 5:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = kelvinParaCelsius(valor);
-                            printf("Resultado: %.2lf °C\n", resultado);
+                            printf("Resultado: %.2f °C\n", resultado);
                             break;
                         case 6:
                             printf("Indique o valor para ser convertido: ");
-                            scanf("%lf", &valor);
+                            scanf("%f", &valor);
                             resultado = kelvinParaFahrenheit(valor);
-                            printf("Resultado: %.2lf °F\n", resultado);
+                            printf("Resultado: %.2f °F\n", resultado);
                             break;
                             default:
                             printf("Opcao invalida! Tente novamente.\n");
@@ -388,12 +388,24 @@ int main(){
                      scanf("%f",&valor);
 
                      switch(conversao){
-                         case 1: resultado=valor/3.6; printf("%.2f km/h = %.2f m/s\n", valor, resultado); break;
-                         case 2: resultado=valor*3.6; printf("%.2f m/s = %.2f km/h\n", valor, resultado); break;
-                         case 3: resultado=valor*0.621371; printf("%.2f km/h = %.2f mph\n", valor, resultado); break;
-                         case 4: resultado=valor/0.621371; printf("%.2f mph = %.2f km/h\n", valor, resultado); break;
-                         case 5: resultado=valor*2.23694; printf("%.2f m/s = %.2f mph\n", valor, resultado); break;
-                         default: resultado=valor/2.23694; printf("%.2f mph = %.2f m/s\n", valor, resultado);
+                         case 1: 
+                            resultado=valor/3.6; 
+                                printf("%.2f km/h = %.2f m/s\n", valor, resultado); break;
+                         case 2:
+                            resultado=valor*3.6;   
+                                printf("%.2f m/s = %.2f km/h\n", valor, resultado); break;
+                         case 3: 
+                            resultado=valor*0.621371; 
+                                printf("%.2f km/h = %.2f mph\n", valor, resultado); break;
+                         case 4:
+                            resultado=valor/0.621371; 
+                                printf("%.2f mph = %.2f km/h\n", valor, resultado); break;
+                         case 5:
+                            resultado=valor*2.23694; 
+                                printf("%.2f m/s = %.2f mph\n", valor, resultado); break;
+                         default:  
+                            resultado=valor/2.23694;    
+                                printf("%.2f mph = %.2f m/s\n", valor, resultado);
                         }
                     }
              break;//Do case 5
@@ -414,12 +426,24 @@ int main(){
                      scanf("%f",&valor);
 
                      switch(conversao){
-                         case 1: resultado=valor/1000; printf("%.2f W = %.2f kW\n", valor, resultado); break;
-                         case 2: resultado=valor*1000; printf("%.2f kW = %.2f W\n", valor, resultado); break;
-                         case 3: resultado=valor*0.0013596; printf("%.2f W = %.2f cv\n", valor, resultado); break;
-                         case 4: resultado=valor/0.0013596; printf("%.2f cv = %.2f W\n", valor, resultado); break;
-                         case 5: resultado=valor*1.35962; printf("%.2f kW = %.2f cv\n", valor, resultado); break;
-                         default: resultado=valor/1.35962; printf("%.2f cv = %.2f kW\n", valor, resultado);
+                         case 1: 
+                            resultado=valor/1000; 
+                                printf("%.2f W = %.2f kW\n", valor, resultado); break;
+                         case 2: 
+                            resultado=valor*1000; 
+                                printf("%.2f kW = %.2f W\n", valor, resultado); break;
+                         case 3: 
+                            resultado=valor*0.0013596;
+                                printf("%.2f W = %.2f cv\n", valor, resultado); break;
+                         case 4: 
+                            resultado=valor/0.0013596; 
+                                printf("%.2f cv = %.2f W\n", valor, resultado); break;
+                         case 5:
+                            resultado=valor*1.35962; 
+                                printf("%.2f kW = %.2f cv\n", valor, resultado); break;
+                         default:  
+                            resultado=valor/1.35962;   
+                            printf("%.2f cv = %.2f kW\n", valor, resultado);
                         }
                     }
              break;//Do case 6
@@ -452,23 +476,23 @@ int main(){
                     continue;
                 }
             
-                switch (opcao) {
-                    case 1:
-                        printf("%.2f bits = %.2f bytes\n", valor, bitsParaBytes(valor));
-                        break;
-                    case 2:
-                        printf("%.2f bytes = %.2f KB\n", valor, bytesParaKB(valor));
-                        break;
-                    case 3:
-                        printf("%.2f KB = %.2f MB\n", valor, kbParaMB(valor));
-                        break;
-                    case 4:
-                        printf("%.2f MB = %.2f GB\n", valor, mbParaGB(valor));
-                        break;
-                    default:
-                        printf("Opcao invalida! Tente novamente.\n");
-                        break;
-                }
+                        switch (opcao) {
+                            case 1:
+                                printf("%.2f bits = %.2f bytes\n", valor, bitsParaBytes(valor));
+                                break;
+                            case 2:
+                                printf("%.2f bytes = %.2f KB\n", valor, bytesParaKB(valor));
+                                break;
+                            case 3:
+                                printf("%.2f KB = %.2f MB\n", valor, kbParaMB(valor));
+                                break;
+                            case 4:
+                                printf("%.2f MB = %.2f GB\n", valor, mbParaGB(valor));
+                                break;
+                            default:
+                                printf("Opcao invalida! Tente novamente.\n");
+                                break;
+                        }
             }
         }
     }
