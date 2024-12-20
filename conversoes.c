@@ -33,6 +33,14 @@ double mililitroParaMetrosCubicos(double valor){return valor / 1e6;}
 double metrosCubicosParaLitro(double valor){return valor * 1000.0;}
 double metrosCubicosParaMililitro(double valor){return valor * 1e6;}
 
+// Funções de conversão de temperatura
+double celsiusParaFahrenheit(double valor) { return (valor * 9.0 / 5.0) + 32.0; }
+double celsiusParaKelvin(double valor) { return valor + 273.15; }
+double fahrenheitParaCelsius(double valor) { return (valor - 32.0) * 5.0 / 9.0; }
+double fahrenheitParaKelvin(double valor) { return (valor - 32.0) * 5.0 / 9.0 + 273.15; }
+double kelvinParaCelsius(double valor) { return valor - 273.15; }
+double kelvinParaFahrenheit(double valor) { return (valor - 273.15) * 9.0 / 5.0 + 32.0; }
+
 
 //Função Principal
 int main(){
@@ -207,6 +215,70 @@ int main(){
                             break;
                 }
             }
+
+             case 4:
+                while (1) {
+                    // Exibir o menu para o usuário
+                    printf("Qual conversao de temperatura voce quer fazer?\n");
+                    printf("1 - Celsius para Fahrenheit\n");
+                    printf("2 - Celsius para Kelvin\n");
+                    printf("3 - Fahrenheit para Celsius\n");
+                    printf("4 - Fahrenheit para Kelvin\n");
+                    printf("5 - Kelvin para Celsius\n");
+                    printf("6 - Kelvin para Fahrenheit\n");
+                    printf("0 - Sair do menu\n");
+                    printf("Escolha uma opcao: ");
+                    scanf("%d", &opcao);
+
+                    if (opcao == 0) {
+                        printf("Voltando ao menu de conversoes...\n");
+                        break; // Sai do laço while
+                    }
+
+                    double valor, resultado;
+                    switch (opcao) {
+                        case 1:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = celsiusParaFahrenheit(valor);
+                            printf("Resultado: %.2lf °F\n", resultado);
+                            break;
+                        case 2:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = celsiusParaKelvin(valor);
+                            printf("Resultado: %.2lf K\n", resultado);
+                            break;
+                        case 3:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = fahrenheitParaCelsius(valor);
+                            printf("Resultado: %.2lf °C\n", resultado);
+                            break;
+                        case 4:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = fahrenheitParaKelvin(valor);
+                            printf("Resultado: %.2lf K\n", resultado);
+                            break;
+                        case 5:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = kelvinParaCelsius(valor);
+                            printf("Resultado: %.2lf °C\n", resultado);
+                            break;
+                        case 6:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%lf", &valor);
+                            resultado = kelvinParaFahrenheit(valor);
+                            printf("Resultado: %.2lf °F\n", resultado);
+                            break;
+                            default:
+                            printf("Opcao invalida! Tente novamente.\n");
+                            break;
+                    }
+                }
+
 
             case 7: 
                 while (1){
