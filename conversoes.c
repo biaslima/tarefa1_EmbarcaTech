@@ -363,8 +363,6 @@ int main(){
                     }
                 }   
             }
-            default:
-                break;
 
              break; //Do case 2
             case 5: while(1){
