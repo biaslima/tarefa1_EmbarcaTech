@@ -3,6 +3,8 @@
 //Funções de Comprimento
 float metros_para_centimetros(float metros) {return metros * 100;}
 float metros_para_milimetros(float metros){return metros * 1000;}
+float centimetros_para_milimetros(float centimetros){return centimetros * 10;}
+float milimetros_para_centimetros(float milimetros){return milimetros / 10;}
 float milimetros_para_metros(float milimetros){return milimetros / 1000;}
 float centimetros_para_metros(float centimetros){return centimetros / 100;}
 
@@ -11,6 +13,8 @@ float quilograma_para_grama(float quilograma){return quilograma * 1000;}
 float quilograma_para_tonelada(float quilograma){return quilograma / 1000;}
 float tonelada_para_quilograma(float tonelada){return tonelada * 1000;}
 float grama_para_quilograma(float grama){return grama / 1000;}
+float tonelada_para_grama(float tonelada){return tonelada * 1000000;}
+float grama_para_tonelada(float grama){return grama / 1000000;}
 
 // Funções de Área
 float metrosquadrados_centimetrosquadrados (float metros) {return metros * 10000;}
@@ -78,10 +82,12 @@ int main(){
                 
                 while(1){ //Esse é o primeiro menu que de fato converte os valores, aqui o usuário escolhe a conversão que quer fazer. Esse outro switch será espelhado nas outras conversões. 
                     printf("Escolha uma conversao:\n");
-                    printf("1. Metros para Centimetros\n");
+                    printf("1. Metros para Centímetros\n");
                     printf("2. Metros para Milimetros\n");
-                    printf("3. Milimetros para Metros\n");
-                    printf("4. Centimetros para Metros\n");
+                    printf("3. Milímetros para Metros\n");
+                    printf("4. Centímetros para Metros\n");
+                    printf("5. Milímetros para Centímetros\n");
+                    printf("6. Centímetros para Milímetros\n");
                     printf("0. Voltar ao Menu de Conversoes\n");
                     printf("Opcao: ");
                     scanf("%d", &conversao);
@@ -97,34 +103,43 @@ int main(){
                     switch (conversao){
                     case 1:
                             resultado = metros_para_centimetros(valor);
-                            printf("%.2f metros = %.2f centimetros\n", valor, resultado);
+                            printf("%.2f %s = %.2f %s\n", valor, (valor == 1) ? "metro" : "metros", resultado, (resultado == 1) ? "centimetro" : "centimetros");
                         break;
                     case 2: 
                         resultado = metros_para_milimetros(valor);
-                            printf("%.2f metros = %.2f milimetros\n", valor, resultado);
+                            printf("%.2f %s = %.2f %s\n", valor, (valor == 1) ? "metro" : "metros", resultado, (resultado == 1) ? "milímetro" : "milímetros");
                         break;
                     case 3: 
                         resultado = milimetros_para_metros(valor);
-                            printf("%.2f milimetros = %.2f metros\n", valor, resultado);
+                            printf("%.2f %s = %.3f %s\n", valor, (valor == 1) ? "milímetro" : "milímetros", resultado, (resultado == 1) ? "metro" : "metros");
                         break;
                     case 4: 
                         resultado = centimetros_para_metros(valor);
-                            printf("%.2f metros = %.2f centimetros\n", valor, resultado);
+                            printf("%.2f %s = %.2f %s\n", valor, (valor == 1) ? "centímetro" : "centímetros", resultado, (resultado == 1) ? "metro" : "metros");
+                        break;
+                    case 5: 
+                        resultado = milimetros_para_centimetros(valor);
+                            printf("%.2f %s = %.2f %s\n", valor, (valor == 1) ? "milímetro" : "milímetros", resultado, (resultado == 1) ? "centímetro" : "centímetros");
+                        break;
+                    case 6: 
+                        resultado = centimetros_para_milimetros(valor);
+                            printf("%.2f %s = %.2f %s\n", valor, (valor == 1) ? "centímetro" : "centímetros", resultado, (resultado == 1) ? "milímetro" : "milímetros");
                         break;
                     default:
                         printf("Opcao invalida! Tente novamente.\n");
                         break;
                     }   
                 }
-             break;
+            break;
             case 2:
-                
                 while(1){
                     printf("Escolha uma conversao:\n");
                     printf("1. Quilograma para Grama\n");
                     printf("2. Quilograma para Tonelada\n");
                     printf("3. Tonelada para Quilograma\n");
                     printf("4. Grama para Quilograma\n");
+                    printf("5. Tonelada para Grama\n");
+                    printf("6. Grama para Tonelada\n");
                     printf("0. Voltar ao Menu de Conversoes\n");
                     printf("Opçao: ");
                     scanf("%d", &conversao);
@@ -138,26 +153,36 @@ int main(){
                     scanf("%f", &valor);
 
                     switch (conversao){
-                    case 1:
-                            resultado = quilograma_para_grama(valor);
-                            printf("%.2f quilogramas = %.2f gramas\n", valor, resultado);
-                        break;
-                    case 2: 
-                        resultado = quilograma_para_tonelada(valor);
-                            printf("%.2f quilogramas = %.2f gramas\n", valor, resultado);
-                        break;
-                    case 3: 
-                        resultado = tonelada_para_quilograma(valor);
-                            printf("%.2f toneladas = %.2f quilogramas\n", valor, resultado);
-                        break;
-                    case 4: 
-                        resultado = centimetros_para_metros(valor);
-                            printf("%.2f grama = %.2f quiolograma\n", valor, resultado);
-                        break;
-                    default:
-                        printf("Opcao invalida! Tente novamente.\n");
-                        break;
+                        case 1:
+                                resultado = quilograma_para_grama(valor);
+                                printf("%.2f %s = %.2f %s\n", valor, (valor == 1) ? "quilograma" : "quilogramas", resultado, (resultado == 1) ? "grama" : "gramas");
+                            break;
+                        case 2: 
+                            resultado = quilograma_para_tonelada(valor);
+                               printf("%.2f %s = %.3f %s\n", valor, (valor == 1) ? "quilograma" : "quilogramas", resultado, (resultado == 1) ? "tonelada" : "toneladas");
+                            break;
+                        case 3: 
+                            resultado = tonelada_para_quilograma(valor);
+                                printf("%.2f %s = %.2f %s\n", valor, (valor == 1) ? "tonelada" : "toneladas", resultado, (resultado == 1) ? "quilograma" : "quilogramas");
+                            break;
+                        case 4: 
+                            resultado = grama_para_quilograma(valor);
+                                printf("%.2f %s = %.3f %s\n", valor, (valor == 1) ? "grama" : "gramas", resultado, (resultado == 1) ? "quilograma" : "quilogramas");
+                            break;
+                        case 5: 
+                            resultado = tonelada_para_grama(valor);
+                                printf("%.2f %s = %.2f %s\n", valor, (valor == 1) ? "tonelada" : "toneladas", resultado, (resultado == 1) ? "grama" : "gramas");
+                            break;
+                        case 6: 
+                            resultado = grama_para_tonelada(valor);
+                                printf("%.2f %s = %.6f %s\n", valor, (valor == 1) ? "grama" : "gramas", resultado, (resultado == 1) ? "tonelada" : "toneladas");
+                            break;
+                        default:
+                            printf("Opcao invalida! Tente novamente.\n");
+                            break;
                     }
+                }
+            break;
             case 3:
                 while (1) {
                     // Exibir o menu para o usuário
@@ -177,49 +202,49 @@ int main(){
                         break; // Sai do laço while
                     }
 
-                switch (opcao) {
-                    case 1:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = litroParaMililitro(valor);
-                        printf("Resultado: %.2f mL\n", resultado);
-                        break;
-                    case 2:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = litroParaMetrosCubicos(valor);
-                        printf("Resultado: %.6f m³\n", resultado);
-                        break;
-                    case 3:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                        resultado = mililitroParaLitro(valor);
-                        printf("Resultado: %.2f L\n", resultado);
-                        break;
-                    case 4:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = mililitroParaMetrosCubicos(valor);
-                        printf("Resultado: %.6f m³\n", resultado);
-                        break;
-                    case 5:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = metrosCubicosParaLitro(valor);
-                        printf("Resultado: %.2f L\n", resultado);
-                        break;
-                    case 6:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = metrosCubicosParaMililitro(valor);
-                        printf("Resultado: %.2f mL\n", resultado);
-                        break;
-                    default:
-                        printf("Opcao invalida! Tente novamente.\n");
-                        break;
-            }
-        }
-
+                    switch (opcao) {
+                        case 1:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = litroParaMililitro(valor);
+                            printf("Resultado: %.2f mL\n", resultado);
+                            break;
+                        case 2:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = litroParaMetrosCubicos(valor);
+                            printf("Resultado: %.6f m³\n", resultado);
+                            break;
+                        case 3:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                            resultado = mililitroParaLitro(valor);
+                            printf("Resultado: %.2f L\n", resultado);
+                            break;
+                        case 4:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = mililitroParaMetrosCubicos(valor);
+                            printf("Resultado: %.6f m³\n", resultado);
+                            break;
+                        case 5:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = metrosCubicosParaLitro(valor);
+                            printf("Resultado: %.2f L\n", resultado);
+                            break;
+                        case 6:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = metrosCubicosParaMililitro(valor);
+                            printf("Resultado: %.2f mL\n", resultado);
+                            break;
+                        default:
+                            printf("Opcao invalida! Tente novamente.\n");
+                            break;
+                    }
+                }
+            break;
             case 4:
                 while (1) {
                     printf("Qual conversao de temperatura voce quer fazer?\n");
@@ -238,48 +263,49 @@ int main(){
                         break; 
                     }
 
-                switch (opcao) {
-                    case 1:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = celsiusParaFahrenheit(valor);
-                        printf("Resultado: %.2f °F\n", resultado);
-                        break;
-                    case 2:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = celsiusParaKelvin(valor);
-                        printf("Resultado: %.2f K\n", resultado);
-                        break;
-                    case 3:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = fahrenheitParaCelsius(valor);
-                        printf("Resultado: %.2f °C\n", resultado);
-                        break;
-                    case 4:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                        resultado = fahrenheitParaKelvin(valor);
-                        printf("Resultado: %.2f K\n", resultado);
-                        break;
-                    case 5:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = kelvinParaCelsius(valor);
-                        printf("Resultado: %.2f °C\n", resultado);
-                        break;
-                    case 6:
-                        printf("Indique o valor para ser convertido: ");
-                        scanf("%f", &valor);
-                            resultado = kelvinParaFahrenheit(valor);
-                        printf("Resultado: %.2f °F\n", resultado);
-                        break;
-                        default:
-                        printf("Opcao invalida! Tente novamente.\n");
-                        break;
+                    switch (opcao) {
+                        case 1:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = celsiusParaFahrenheit(valor);
+                            printf("Resultado: %.2f °F\n", resultado);
+                            break;
+                        case 2:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = celsiusParaKelvin(valor);
+                            printf("Resultado: %.2f K\n", resultado);
+                            break;
+                        case 3:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = fahrenheitParaCelsius(valor);
+                            printf("Resultado: %.2f °C\n", resultado);
+                            break;
+                        case 4:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                            resultado = fahrenheitParaKelvin(valor);
+                            printf("Resultado: %.2f K\n", resultado);
+                            break;
+                        case 5:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = kelvinParaCelsius(valor);
+                            printf("Resultado: %.2f °C\n", resultado);
+                            break;
+                        case 6:
+                            printf("Indique o valor para ser convertido: ");
+                            scanf("%f", &valor);
+                                resultado = kelvinParaFahrenheit(valor);
+                            printf("Resultado: %.2f °F\n", resultado);
+                            break;
+                            default:
+                            printf("Opcao invalida! Tente novamente.\n");
+                            break;
+                    }
                 }
-                }
+            break;
             case 5: while(1){
                 printf("Escolha uma conversao:\n");
                 printf("1. km/h para m/s\n");
@@ -317,7 +343,7 @@ int main(){
                             printf("%.2f mph = %.2f m/s\n", valor, resultado);
                 }
             }
-             break;//Do case 5
+             break;
             case 6: while(1){
                  printf("Escolha uma conversao:\n");
                  printf("1. W para kW\n");
@@ -355,8 +381,7 @@ int main(){
                             printf("%.2f cv = %.2f kW\n", valor, resultado);
                     }
                 }
-             break;//Do case 6
-    
+             break;
             case 7: 
                 while (1){
                     printf("Escolha uma conversao:\n");
@@ -388,7 +413,7 @@ int main(){
     
                     }
                 }
-    
+            break;
             case 8:
                 while (1){
                     printf("Escolha uma conversao:\n");
@@ -438,39 +463,37 @@ int main(){
                         printf("Opcao invalida! Tente novamente.\n");
                         break;
                     }
-                }   
-            }
-    
-             break; //Do case 2
-    
-            case 9: while (1) { 
-                printf("\n=== Conversor de Unidades ===\n");
-                printf("1 - Bits para Bytes\n");
-                printf("2 - Bytes para KB\n");
-                printf("3 - KB para MB\n");
-                printf("4 - MB para GB\n");
-                printf("0 - Sair\n");
-                printf("=============================\n");
-                printf("Opcao: ");
-                
-                if (scanf("%d", &opcao) != 1) {
-                    printf("Entrada invalida. Tente novamente.\n");
-                    while(getchar() != '\n'); 
-                    continue;
-                }
-            
-                if (opcao == 0) {
-                    printf("Saindo do menu de conversão...\n");
-                    break; 
-                }
-            
-                printf("Digite o valor para conversao: ");
-                if (scanf("%f", &valor) != 1) {
-                    printf("Entrada invalida. Tente novamente.\n");
-                    while(getchar() != '\n'); 
-                    continue;
-                }
-            
+                }    
+            break;
+            case 9: 
+                while (1) {
+                    printf("\n=== Conversor de Unidades ===\n");
+                    printf("1 - Bits para Bytes\n");
+                    printf("2 - Bytes para KB\n");
+                    printf("3 - KB para MB\n");
+                    printf("4 - MB para GB\n");
+                    printf("0 - Sair\n");
+                    printf("=============================\n");
+                    printf("Opcao: ");
+
+                    if (scanf("%d", &opcao) != 1) {
+                        printf("Entrada invalida. Tente novamente.\n");
+                        while(getchar() != '\n'); 
+                        continue;
+                    }
+
+                    if (opcao == 0) {
+                        printf("Saindo do menu de conversão...\n");
+                        break; 
+                    }
+
+                    printf("Digite o valor para conversao: ");
+                    if (scanf("%f", &valor) != 1) {
+                        printf("Entrada invalida. Tente novamente.\n");
+                        while(getchar() != '\n'); 
+                        continue;
+                    }
+
                     switch (opcao) {
                         case 1:
                             printf("%.2f bits = %.2f bytes\n", valor, bitsParaBytes(valor));
@@ -488,7 +511,8 @@ int main(){
                             printf("Opcao invalida! Tente novamente.\n");
                             break;
                     }
-            }
+                }
+            break;
         }
     }
  return 0;
