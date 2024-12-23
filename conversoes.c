@@ -29,20 +29,20 @@ float minutos_segundos (float minutos) {return minutos * 60;}
 float minutos_horas (float minutos) {return minutos / 60;}
 
 // Definições das funções de conversão volumétrica
-float litroParaMililitro(float valor){return valor * 1000.0;}
-float litroParaMetrosCubicos(float valor){return valor / 1000.0;}
-float mililitroParaLitro(float valor){return valor / 1000.0;}
-float mililitroParaMetrosCubicos(float valor){return valor / 1e6;}
-float metrosCubicosParaLitro(float valor){return valor * 1000.0;}
-float metrosCubicosParaMililitro(float valor){return valor * 1e6;}
+float litro_Para_Mililitro(float valor){return valor * 1000.0;}
+float litro_Para_MetrosCubicos(float valor){return valor / 1000.0;}
+float mililitro_Para_Litro(float valor){return valor / 1000.0;}
+float mililitro_Para_MetrosCubicos(float valor){return valor / 1e6;}
+float metrosCubicos_Para_Litro(float valor){return valor * 1000.0;}
+float metrosCubicos_Para_Mililitro(float valor){return valor * 1e6;}
 
 // Funções de conversão de temperatura
-float celsiusParaFahrenheit(float valor) { return (valor * 9.0 / 5.0) + 32.0; }
-float celsiusParaKelvin(float valor) { return valor + 273.15; }
-float fahrenheitParaCelsius(float valor) { return (valor - 32.0) * 5.0 / 9.0; }
-float fahrenheitParaKelvin(float valor) { return (valor - 32.0) * 5.0 / 9.0 + 273.15; }
-float kelvinParaCelsius(float valor) { return valor - 273.15; }
-float kelvinParaFahrenheit(float valor) { return (valor - 273.15) * 9.0 / 5.0 + 32.0; }
+float celsius_Para_Fahrenheit(float valor) { return (valor * 9.0 / 5.0) + 32.0; }
+float celsius_Para_Kelvin(float valor) { return valor + 273.15; }
+float fahrenheit_Para_Celsius(float valor) { return (valor - 32.0) * 5.0 / 9.0; }
+float fahrenheit_Para_Kelvin(float valor) { return (valor - 32.0) * 5.0 / 9.0 + 273.15; }
+float kelvin_Para_Celsius(float valor) { return valor - 273.15; }
+float kelvin_Para_Fahrenheit(float valor) { return (valor - 273.15) * 9.0 / 5.0 + 32.0; }
 
 // Funções de conversão para unidades de bits, bytes, KB, MB e GB
 float bitsParaBytes(float bits) { return bits / 8.0; }
@@ -206,37 +206,37 @@ int main(){
                         case 1:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = litroParaMililitro(valor);
+                                resultado = litro_Para_Mililitro(valor);
                             printf("Resultado: %.2f mL\n", resultado);
                             break;
                         case 2:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = litroParaMetrosCubicos(valor);
+                                resultado = litro_Para_MetrosCubicos(valor);
                             printf("Resultado: %.6f m³\n", resultado);
                             break;
                         case 3:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                            resultado = mililitroParaLitro(valor);
+                            resultado = mililitro_Para_Litro(valor);
                             printf("Resultado: %.2f L\n", resultado);
                             break;
                         case 4:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = mililitroParaMetrosCubicos(valor);
+                                resultado = mililitro_Para_MetrosCubicos(valor);
                             printf("Resultado: %.6f m³\n", resultado);
                             break;
                         case 5:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = metrosCubicosParaLitro(valor);
+                                resultado = metrosCubicos_Para_Litro(valor);
                             printf("Resultado: %.2f L\n", resultado);
                             break;
                         case 6:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = metrosCubicosParaMililitro(valor);
+                                resultado = metrosCubicos_Para_Mililitro(valor);
                             printf("Resultado: %.2f mL\n", resultado);
                             break;
                         default:
@@ -267,37 +267,37 @@ int main(){
                         case 1:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = celsiusParaFahrenheit(valor);
+                                resultado = celsius_Para_Fahrenheit(valor);
                             printf("Resultado: %.2f °F\n", resultado);
                             break;
                         case 2:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = celsiusParaKelvin(valor);
+                                resultado = celsius_Para_Kelvin(valor);
                             printf("Resultado: %.2f K\n", resultado);
                             break;
                         case 3:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = fahrenheitParaCelsius(valor);
+                                resultado = fahrenheit_Para_Celsius(valor);
                             printf("Resultado: %.2f °C\n", resultado);
                             break;
                         case 4:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                            resultado = fahrenheitParaKelvin(valor);
+                            resultado = fahrenheit_Para_Kelvin(valor);
                             printf("Resultado: %.2f K\n", resultado);
                             break;
                         case 5:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = kelvinParaCelsius(valor);
+                                resultado = kelvin_Para_Celsius(valor);
                             printf("Resultado: %.2f °C\n", resultado);
                             break;
                         case 6:
                             printf("Indique o valor para ser convertido: ");
                             scanf("%f", &valor);
-                                resultado = kelvinParaFahrenheit(valor);
+                                resultado = kelvin_Para_Fahrenheit(valor);
                             printf("Resultado: %.2f °F\n", resultado);
                             break;
                             default:
