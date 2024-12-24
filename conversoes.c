@@ -67,7 +67,7 @@ int main(){
         printf("6. Unidades de Potencia\n");
         printf("7. Unidades de Area\n");
         printf("8. Unidades de Tempo\n");
-        printf("9. Unidades de armazenamento de dados\n");
+        printf("9. Unidades de Armazenamento de dados\n");
         printf("0. Sair\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
