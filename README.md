@@ -9,6 +9,8 @@ Este programa realiza conversões de unidades de medida de acordo com a escolha 
 3. Siga as instruções do menu para selecionar a conversão desejada.
 
 ## Funcionalidades
+- Conversão de comprimento 
+- Conversão de massa.
 - Conversão de volume.
 - Conversão de tempo.
 - Conversão de temperatura.
