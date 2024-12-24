@@ -32,7 +32,11 @@ Digite um numero correspondente ao tipo de conversao que voce deseja fazer:
 8. Unidades de Tempo
 9. Unidades de armazenamento de dados
 0. Sair
+
+
 Opcao: 1
+
+
 Escolha uma conversao:
 1. Metros para Centímetros
 2. Metros para Milimetros
@@ -41,6 +45,12 @@ Escolha uma conversao:
 5. Milímetros para Centímetros
 6. Centímetros para Milímetros
 0. Voltar ao Menu de Conversoes
+
+
 Opcao: 1
+
+
 Digite o valor: 1
+
+
 1.00 metro = 100.00 centimetros
