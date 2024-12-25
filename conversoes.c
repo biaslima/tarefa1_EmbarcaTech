@@ -82,12 +82,12 @@ int main(){
                 
                 while(1){ //Esse é o primeiro menu que de fato converte os valores, aqui o usuário escolhe a conversão que quer fazer. Esse outro switch será espelhado nas outras conversões. 
                     printf("Escolha uma conversao:\n");
-                    printf("1. Metros para Centimetros\n");
-                    printf("2. Metros para Milimetros\n");
-                    printf("3. Milimetros para Metros\n");
-                    printf("4. Centimetros para Metros\n");
-                    printf("5. Milimetros para Centimetros\n");
-                    printf("6. Centimetros para Milimetros\n");
+                    printf("1. Metros para centimetros\n");
+                    printf("2. Metros para milimetros\n");
+                    printf("3. Milimetros para metros\n");
+                    printf("4. Centimetros para metros\n");
+                    printf("5. Milimetros para centimetros\n");
+                    printf("6. Centimetros para milimetros\n");
                     printf("0. Voltar ao Menu de Conversoes\n");
                     printf("Opcao: ");
                     scanf("%d", &conversao);
