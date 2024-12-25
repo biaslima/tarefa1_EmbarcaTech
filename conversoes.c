@@ -56,7 +56,7 @@ int main(){
     float valor = 0, resultado = 0;
     
 
-    while (1){ // Menu de Tipos de Converções -- Foi criado um menu switch case para o usuário escolher a unidade de conversão. Esse while (assim como os próximo) permite que o menu fique em loop até que o usuário queira sair. 
+    while (1){ // Menu de Tipos de Conversões -- Foi criado um menu switch case para o usuário escolher a unidade de conversão. Esse while (assim como os próximo) permite que o menu fique em loop até que o usuário queira sair. 
     
         printf("Digite um numero correspondente ao tipo de conversao que voce deseja fazer:\n");
         printf("1. Unidades de Comprimento\n");
@@ -82,12 +82,12 @@ int main(){
                 
                 while(1){ //Esse é o primeiro menu que de fato converte os valores, aqui o usuário escolhe a conversão que quer fazer. Esse outro switch será espelhado nas outras conversões. 
                     printf("Escolha uma conversao:\n");
-                    printf("1. Metros para Centímetros\n");
+                    printf("1. Metros para Centimetros\n");
                     printf("2. Metros para Milimetros\n");
-                    printf("3. Milímetros para Metros\n");
-                    printf("4. Centímetros para Metros\n");
-                    printf("5. Milímetros para Centímetros\n");
-                    printf("6. Centímetros para Milímetros\n");
+                    printf("3. Milimetros para Metros\n");
+                    printf("4. Centimetros para Metros\n");
+                    printf("5. Milimetros para Centimetros\n");
+                    printf("6. Centimetros para Milimetros\n");
                     printf("0. Voltar ao Menu de Conversoes\n");
                     printf("Opcao: ");
                     scanf("%d", &conversao);
