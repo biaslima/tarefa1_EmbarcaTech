@@ -141,7 +141,7 @@ int main(){
                     printf("5. Tonelada para Grama\n");
                     printf("6. Grama para Tonelada\n");
                     printf("0. Voltar ao Menu de Conversoes\n");
-                    printf("Opçao: ");
+                    printf("Opcao: ");
                     scanf("%d", &conversao);
 
                     if (conversao == 0){
@@ -193,7 +193,7 @@ int main(){
                     printf("4 - Mililitro para Metros Cubicos\n");
                     printf("5 - Metros Cubicos para Litro\n");
                     printf("6 - Metros Cubicos para Mililitro\n");
-                    printf("0 - Sair do menu\n");
+                    printf("0. Voltar ao Menu de Conversoes\n");
                     printf("Escolha uma opcao: ");
                     scanf("%d", &opcao);
     
@@ -254,7 +254,7 @@ int main(){
                     printf("4 - Fahrenheit para Kelvin\n");
                     printf("5 - Kelvin para Celsius\n");
                     printf("6 - Kelvin para Fahrenheit\n");
-                    printf("0 - Sair do menu\n");
+                    printf("0. Voltar ao Menu de Conversoes\n");
                     printf("Escolha uma opcao: ");
                     scanf("%d", &opcao);
 
@@ -387,7 +387,8 @@ int main(){
                     printf("Escolha uma conversao:\n");
                     printf("1. Metros Quadrados para Centimetros Quadrados\n");
                     printf("2. Centimetros Quadrados para Metros Quadrados\n");
-                    printf("Opçao: ");
+                    printf("0. Voltar ao Menu de Conversoes\n");
+                    printf("Opcao: ");
                     scanf("%d", &conversao);
     
                     if (conversao == 0) {
@@ -423,7 +424,8 @@ int main(){
                     printf("4. Horas para Minutos\n");
                     printf("5. Minutos para Segundos\n");
                     printf("6. Minutos para Horas\n");
-                    printf("Opçao: ");
+                    printf("0. Voltar ao Menu de Conversoes\n");
+                    printf("Opcao: ");
                     scanf("%d", &conversao);
     
                     if (conversao == 0) {
@@ -472,7 +474,7 @@ int main(){
                     printf("2 - Bytes para KB\n");
                     printf("3 - KB para MB\n");
                     printf("4 - MB para GB\n");
-                    printf("0 - Sair\n");
+                    printf("0. Voltar ao Menu de Conversoes\n");
                     printf("=============================\n");
                     printf("Opcao: ");
 
@@ -483,7 +485,7 @@ int main(){
                     }
 
                     if (opcao == 0) {
-                        printf("Saindo do menu de conversão...\n");
+                        printf("Saindo do menu de conversao...\n");
                         break; 
                     }
 
